@@ -1,0 +1,249 @@
+{
+  "openapi": "3.0.0",
+  "servers": [
+    {
+      "url": "http://localhost:8080",
+      "description": "",
+      "variables": {}
+    }
+  ],
+  "info": {
+    "version": "589abd12-d08a-4c5c-afbe-e2b5b5eed02b",
+    "title": "mcShares",
+    "description": "",
+    "termsOfService": "",
+    "contact": {},
+    "license": {
+      "name": ""
+    }
+  },
+  "paths": {
+    "/mcshares/upload": {
+      "post": {
+        "summary": "http://localhost:8080/mcshares/upload",
+        "operationId": "http://localhost:8080/mcshares/upload",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/Authorization"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "API to upload an XML file and save customer records if valid",
+            "headers": {}
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "required": [
+                  "file"
+                ],
+                "properties": {
+                  "file": {
+                    "type": "string",
+                    "format": "binary"
+                  }
+                }
+              },
+              "example": [
+                {
+                  "key": "file",
+                  "type": "file",
+                  "src": "/E:/Projects/demo/src/main/resources/XMLTestFiles/McShares_2018_corrected.xml"
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    "/mcshares/retrieveAllCustomers/C11233": {
+      "get": {
+        "summary": "http://localhost:8080/mcshares/retrieveAllCustomers/C11233",
+        "operationId": "http://localhost:8080/mcshares/retrieveAllCustomers/C11233",
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "example": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0YXNod2VlbiIsImV4cCI6MTY0MDk3MjI5OCwiaWF0IjoxNjQwOTU0Mjk4fQ.YtG-fmcU7fFPHGRMpck0E8aQLRpmNz2-nG8a07ZoSXTkB_9Eycjt8y5k6HBKvr6wpXA9S1jFctWFOp7ale_N0w"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "API to either Retrieve all customers if customerRef not added in REST CALL or Retrieve one customer by the customerRef",
+            "headers": {}
+          }
+        }
+      }
+    },
+    "/mcshares/retrieveRecord": {
+      "get": {
+        "summary": "http://localhost:8080/mcshares/retrieveRecord",
+        "operationId": "http://localhost:8080/mcshares/retrieveRecord",
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "example": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0YXNod2VlbiIsImV4cCI6MTY0MDk3MjI5OCwiaWF0IjoxNjQwOTU0Mjk4fQ.YtG-fmcU7fFPHGRMpck0E8aQLRpmNz2-nG8a07ZoSXTkB_9Eycjt8y5k6HBKvr6wpXA9S1jFctWFOp7ale_N0w"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "API to retrieve the specific customer information",
+            "headers": {}
+          }
+        }
+      }
+    },
+    "/mcshares/updateRecord/C11233": {
+      "put": {
+        "summary": "http://localhost:8080/mcshares/updateRecord/C11233",
+        "operationId": "http://localhost:8080/mcshares/updateRecord/C11233",
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "example": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0YXNod2VlbiIsImV4cCI6MTY0MDk3MjI5OCwiaWF0IjoxNjQwOTU0Mjk4fQ.YtG-fmcU7fFPHGRMpck0E8aQLRpmNz2-nG8a07ZoSXTkB_9Eycjt8y5k6HBKvr6wpXA9S1jFctWFOp7ale_N0w"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "API to update specific record for a customerRef for e.g SharesDetails",
+            "headers": {}
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "text/plain": {
+              "schema": {
+                "type": "string",
+                "example": {
+                  "numShares": 10200,
+                  "sharePrice": 11.5
+                }
+              },
+              "example": "{\r\n    \"numShares\":10200,\r\n    \"sharePrice\":11.5\r\n}"
+            }
+          }
+        }
+      }
+    },
+    "/mcshares/retrieveCustomerByName/Ohn do": {
+      "get": {
+        "summary": "http://localhost:8080/mcshares/retrieveCustomerByName/Ohn do",
+        "operationId": "http://localhost:8080/mcshares/retrieveCustomerByName/Ohndo",
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "example": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0YXNod2VlbiIsImV4cCI6MTY0MDk3MjI5OCwiaWF0IjoxNjQwOTU0Mjk4fQ.YtG-fmcU7fFPHGRMpck0E8aQLRpmNz2-nG8a07ZoSXTkB_9Eycjt8y5k6HBKvr6wpXA9S1jFctWFOp7ale_N0w"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "API to retrieve a specific customer record by the customer name",
+            "headers": {}
+          }
+        }
+      }
+    },
+    "/mcshares/downloadDataAsCSV": {
+      "get": {
+        "summary": "http://localhost:8080/mcshares/downloadDataAsCSV",
+        "operationId": "http://localhost:8080/mcshares/downloadDataAsCSV",
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "example": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0YXNod2VlbiIsImV4cCI6MTY0MDk3MjI5OCwiaWF0IjoxNjQwOTU0Mjk4fQ.YtG-fmcU7fFPHGRMpck0E8aQLRpmNz2-nG8a07ZoSXTkB_9Eycjt8y5k6HBKvr6wpXA9S1jFctWFOp7ale_N0w"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "API to generate and download customers records in a CSV file",
+            "headers": {}
+          }
+        }
+      }
+    },
+    "/authenticate": {
+      "post": {
+        "summary": "http://localhost:8080/authenticate",
+        "operationId": "http://localhost:8080/authenticate",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "API to createAuthenticationToken to be able to call other APIs",
+            "headers": {}
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "text/plain": {
+              "schema": {
+                "type": "string",
+                "example": {
+                  "username": "tashween",
+                  "password": "password"
+                }
+              },
+              "example": "{\r\n    \"username\": \"tashween\",\r\n    \"password\": \"password\"\r\n}"
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "parameters": {
+      "Authorization": {
+        "name": "Authorization",
+        "in": "header",
+        "required": true,
+        "style": "simple",
+        "schema": {
+          "type": "string",
+          "example": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0YXNod2VlbiIsImV4cCI6MTY0MDk3MjI5OCwiaWF0IjoxNjQwOTU0Mjk4fQ.YtG-fmcU7fFPHGRMpck0E8aQLRpmNz2-nG8a07ZoSXTkB_9Eycjt8y5k6HBKvr6wpXA9S1jFctWFOp7ale_N0w"
+        }
+      }
+    }
+  },
+  "security": [],
+  "tags": [],
+  "externalDocs": {
+    "url": "",
+    "description": ""
+  },
+  "warnings": []
+}

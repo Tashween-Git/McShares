@@ -1,0 +1,220 @@
+{
+	"info": {
+		"_postman_id": "589abd12-d08a-4c5c-afbe-e2b5b5eed02b",
+		"name": "mcShares",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://localhost:8080/mcshares/upload",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0YXNod2VlbiIsImV4cCI6MTY0MDk3MjI5OCwiaWF0IjoxNjQwOTU0Mjk4fQ.YtG-fmcU7fFPHGRMpck0E8aQLRpmNz2-nG8a07ZoSXTkB_9Eycjt8y5k6HBKvr6wpXA9S1jFctWFOp7ale_N0w",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": "/E:/Projects/demo/src/main/resources/XMLTestFiles/McShares_2018_corrected.xml"
+						}
+					],
+					"options": {
+						"raw": {
+							"language": "xml"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/mcshares/upload",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"mcshares",
+						"upload"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/mcshares/retrieveAllCustomers/C11233",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0YXNod2VlbiIsImV4cCI6MTY0MDk3MjI5OCwiaWF0IjoxNjQwOTU0Mjk4fQ.YtG-fmcU7fFPHGRMpck0E8aQLRpmNz2-nG8a07ZoSXTkB_9Eycjt8y5k6HBKvr6wpXA9S1jFctWFOp7ale_N0w",
+						"type": "string"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/mcshares/retrieveAllCustomers/C11233",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"mcshares",
+						"retrieveAllCustomers",
+						"C11233"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/mcshares/retrieveRecord",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0YXNod2VlbiIsImV4cCI6MTY0MDk3MjI5OCwiaWF0IjoxNjQwOTU0Mjk4fQ.YtG-fmcU7fFPHGRMpck0E8aQLRpmNz2-nG8a07ZoSXTkB_9Eycjt8y5k6HBKvr6wpXA9S1jFctWFOp7ale_N0w",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/mcshares/retrieveRecord",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"mcshares",
+						"retrieveRecord"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/mcshares/updateRecord/C11233",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0YXNod2VlbiIsImV4cCI6MTY0MDk3MjI5OCwiaWF0IjoxNjQwOTU0Mjk4fQ.YtG-fmcU7fFPHGRMpck0E8aQLRpmNz2-nG8a07ZoSXTkB_9Eycjt8y5k6HBKvr6wpXA9S1jFctWFOp7ale_N0w",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"numShares\":10200,\r\n    \"sharePrice\":11.5\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/mcshares/updateRecord/C11233",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"mcshares",
+						"updateRecord",
+						"C11233"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/mcshares/retrieveCustomerByName/Ohn do",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0YXNod2VlbiIsImV4cCI6MTY0MDk3MjI5OCwiaWF0IjoxNjQwOTU0Mjk4fQ.YtG-fmcU7fFPHGRMpck0E8aQLRpmNz2-nG8a07ZoSXTkB_9Eycjt8y5k6HBKvr6wpXA9S1jFctWFOp7ale_N0w",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/mcshares/retrieveCustomerByName/Ohn do",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"mcshares",
+						"retrieveCustomerByName",
+						"Ohn do"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/mcshares/downloadDataAsCSV",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0YXNod2VlbiIsImV4cCI6MTY0MDk3MjI5OCwiaWF0IjoxNjQwOTU0Mjk4fQ.YtG-fmcU7fFPHGRMpck0E8aQLRpmNz2-nG8a07ZoSXTkB_9Eycjt8y5k6HBKvr6wpXA9S1jFctWFOp7ale_N0w",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/mcshares/downloadDataAsCSV",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"mcshares",
+						"downloadDataAsCSV"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/authenticate",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"tashween\",\r\n    \"password\": \"password\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/authenticate",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"authenticate"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
